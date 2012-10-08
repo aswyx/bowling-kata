@@ -4,13 +4,15 @@
  */
 function Game() {
     "use strict";
+    this.score = 0;
 }
 
 /**
  * rolls a ball
  */
-Game.prototype.roll = function () {
+Game.prototype.roll = function (hit) {
     "use strict";
+    this.score += hit;
 };
 
 /**
@@ -20,5 +22,5 @@ Game.prototype.roll = function () {
  */
 Game.prototype.getScore = function () {
     "use strict";
-    return 1;
+    return this.score;
 };
