@@ -1,3 +1,6 @@
-test( "hello test", function() {
-    ok( 1 == "1", "Passed!" );
+test("firstTest", function () {
+    "use strict";
+    var game = new Game();
+    game.roll(1);
+    ok(1 === game.getScore(), "Passed!");
 });
