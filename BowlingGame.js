@@ -23,21 +23,19 @@ Game.prototype.roll = function (hit) {
  */
 Game.prototype.getScore = function () {
     "use strict";
-    console.log(this.rolls);
-    var score = 0, i = 0, frame = 0;
-    while (this.rolls[i] !== undefined && frame < 10) {
-        if (this.rolls[i] === 10) {
-            score += this.rolls[i] + this.rolls[i + 1] + this.rolls[i + 2];
-            i += 1;
-        } else if (this.rolls[i] + this.rolls[i + 1] === 10) {
-            score += this.rolls[i] + this.rolls[i + 1] + this.rolls[i + 2];
-            i += 2;
+    var score = 0, rollIndex = 0, frameIndex = 0;
+    while (this.rolls[rollIndex] !== undefined && frameIndex < 10) {
+        if (this.rolls[rollIndex] === 10) {
+            score += this.rolls[rollIndex] + this.rolls[rollIndex + 1] + this.rolls[rollIndex + 2];
+            rollIndex += 1;
+        } else if (this.rolls[rollIndex] + this.rolls[rollIndex + 1] === 10) {
+            score += this.rolls[rollIndex] + this.rolls[rollIndex + 1] + this.rolls[rollIndex + 2];
+            rollIndex += 2;
         } else {
-            score += this.rolls[i] + this.rolls[i + 1];
-            i += 2;
+            score += this.rolls[rollIndex] + this.rolls[rollIndex + 1];
+            rollIndex += 2;
         }
-        //console.log(score);
-        frame += 1;
+        frameIndex += 1;
     }
     return score;
 };
