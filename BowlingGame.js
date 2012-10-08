@@ -12,12 +12,14 @@ function Game() {
  */
 Game.prototype.roll = function (hit) {
     "use strict";
-    console.log(hit);
     this.rolls.push(hit);
 };
 
 /**
  * calculates the score
+ *
+ * while trying to pass the two gutters test, i realized i need a different approach - instead of looking back
+ * if it was a full frame i can check ahead. And that solved every other problem as well.
  *
  * @return {Integer}
  */

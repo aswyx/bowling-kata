@@ -1,6 +1,8 @@
 /**
  * make rolls to the game
  *
+ * added after the 3 for loops in the twoGutters - that was ugly
+ *
  * @param game
  * @param quantity {Integer}
  * @param value {Integer}
@@ -15,6 +17,8 @@ function makeRoll(game, quantity, value) {
 
 /**
  * Tests a game with all one rolls
+ *
+ * most basic test, easiest to pass just add the hits
  */
 test("testAllOnes", function () {
     "use strict";
@@ -27,6 +31,8 @@ test("testAllOnes", function () {
 
 /**
  * Tests a game with all strike rolls
+ *
+ * to calculate the strike bonus properly - still very easy because every roll is a frame
  */
 test("testAllStrikes", function () {
     'use strict';
@@ -39,6 +45,8 @@ test("testAllStrikes", function () {
 
 /**
  * Tests a gem with all spare frames
+ *
+ * going down the road, it's a bit more difficult because we have to check two rolls for the bonus
  */
 test("testAllSpares", function () {
     'use strict';
@@ -51,6 +59,8 @@ test("testAllSpares", function () {
 
 /**
  * Tests a game with all zero rolls
+ *
+ * just because i didn't want to leave it out.
  */
 test("testAllGutters", function () {
     'use strict';
@@ -63,6 +73,8 @@ test("testAllGutters", function () {
 
 /**
  * Tests a gem with 5 strikes, 2 gutters and 5 strikes again
+ *
+ * deliberately breaking the pattern of all of the same type rolls
  */
 test("testTwoGutters", function () {
     'use strict';
@@ -77,6 +89,8 @@ test("testTwoGutters", function () {
 
 /**
  * Tests a gem with no pattern
+ *
+ * final test, just to make sure
  */
 test("testRandom", function () {
     'use strict';
