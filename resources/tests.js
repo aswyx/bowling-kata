@@ -20,5 +20,14 @@ test("testAllStrikes", function () {
     for (i = 0; i < 12; i += 1) {
         game.roll(10);
     }
-    deepEqual(game.getScore(), 300, "All strike game passed!");
+    deepEqual(game.getScore(), 300, "All strikes game passed!");
+});
+
+test("testAllSpares", function () {
+    'use strict';
+    var game = new Game(), i;
+    for (i = 0; i < 21; i += 1) {
+        game.roll(5);
+    }
+    deepEqual(game.getScore(), 150, "All spares game passed!");
 });

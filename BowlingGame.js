@@ -28,6 +28,9 @@ Game.prototype.getScore = function () {
         if (this.rolls[i] === 10 && frame < 9) {
             score += this.rolls[i + 1] + this.rolls[i + 2];
             frame += 1;
+        } else if (this.rolls[i] + this.rolls[i - 1] === 10 && frame < 9) {
+            score +=  this.rolls[i + 1];
+            frame += 1;
         }
     }
     return score;
