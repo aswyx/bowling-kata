@@ -31,3 +31,12 @@ test("testAllSpares", function () {
     }
     deepEqual(game.getScore(), 150, "All spares game passed!");
 });
+
+test("testAllGutters", function () {
+    'use strict';
+    var game = new Game(), i;
+    for (i = 0; i < 21; i += 1) {
+        game.roll(0);
+    }
+    deepEqual(game.getScore(), 0, "All gutters game passed!");
+});
